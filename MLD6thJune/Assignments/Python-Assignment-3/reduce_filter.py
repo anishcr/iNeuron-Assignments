@@ -16,12 +16,12 @@ def myreduce(function, iterable, initializer=None) :
   accu = initializer
 
   for x in it:
-    accu = function(x, accu)
+    accu = function(accu, x)
 
   return accu
 
 def myfilter(function, iterable) :
-  return myreduce(lambda x, accu : accu + [x] if function(x) else accu, iterable, initializer=[])
+  return myreduce(lambda accu, x : accu + [x] if function(x) else accu, iterable, initializer=[])
 
 if __name__ == "__main__":
   my_list = [1, 2, 3, 4, 5]
