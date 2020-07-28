@@ -3,10 +3,21 @@
 
 
 def is_vowel(char) :
-  vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+  vowels = {'a' : True, 
+            'e' : True,
+            'i' : True,
+            'o' : True,
+            'u' : True,
+            'A' : True, 
+            'E' : True,
+            'I' : True,
+            'O' : True,
+            'U' : True}
 
-  if len(char) != 1 :
-    return False
+  return vowels.get(char, False)
+            
+def is_vowel2(char) :
+  vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
 
   return char in vowels
 
